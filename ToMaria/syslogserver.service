@@ -1,0 +1,17 @@
+[Unit]
+Description=py3syslog server
+After=network.target
+
+[Service]
+ExecStart=/home/example_user/venv/bin/python3 -u syslogserver.py
+WorkingDirectory=/home/example_user
+
+SyslogIdentifier=py3syslog
+
+Restart=always
+RestartSec=5
+User=example_user
+
+[Install]
+WantedBy=multi-user.target
+
